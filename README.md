@@ -50,8 +50,8 @@ The MRR and cosine similarity can be found in `travel_rec.ipynb`. The summarized
 
 ## Running the application
 1. `docker run -p 6333:6333 -p 6334:6334 -v "$(pwd)/qdrant_storage:/qdrant/storage:z" qdrant/qdrant` to start qdrant. Proceed to the next step after qdrant has loaded completely.
-2. `docker build -t travel-rec-app .` to build the image for the app interface
-3. In a new window, run `docker run -it --rm -p 8050:8050 -e OPENAI_API_KEY="your_openai_api_key" travel-rec-app` to launch the app, replacing `your_openai_api_key` with your own openai api key
+2. In a new window, run `docker build -t travel-rec-app .` to build the image for the app interface.
+3. Once the image has been built, run `docker run -it --rm -p 8050:8050 -e OPENAI_API_KEY="your_openai_api_key" travel-rec-app` to launch the app, replacing `your_openai_api_key` with your own openai api key. 
 3. Open a web browser and go to [http://localhost:8050](http://localhost:8050).
 
 You will see this:
@@ -64,7 +64,7 @@ You can key in your query about travelling in Japan and press search. You will b
   <img src="images/demo1.png", width="850">
 </p>
 
-If you're using a different LLM, you can try to amend:
+If you're using a different LLM, you can try to amend (before running the application):
 - `requirements.txt` to add the packages required for your model
 - `retrieval.py`: lines 5 and 9 (importing packages and initiating LLM client), line 66 (the content in the llm response function)
 - the api key in the command in step 2 above
