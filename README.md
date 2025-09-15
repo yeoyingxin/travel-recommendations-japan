@@ -28,8 +28,8 @@ You can find the data in `data/japantravel_posts_with_comments.csv`
 ## Technologies
 
 - Python 3.10
-- Docker and Docker Compose for containerization
-- Dash as the web application interface
+- Docker for containerization
+- Dash for the web application interface
 - Qdrant for vector similarity search (RAG)
 - OPENAI for LLM responses
 
